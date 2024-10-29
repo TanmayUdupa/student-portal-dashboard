@@ -33,7 +33,6 @@ interface HeaderProps {
   };
 
 const Dashboard = () => {
-  const announcements = [{ id: 1, text: 'No class on August 15th due to holiday.' }];
   const classes = [{ subject: 'Math', time: '10:00 AM - 11:00 AM', status: 'Today' }];
   const links = [
     { title: 'Canvas LMS', description: 'Access LMS for notes.', url: '#' },
@@ -47,10 +46,26 @@ const Dashboard = () => {
         userName="Gabrisa"
         classInfo="Class 7, Math + Science"
       />
-      <Announcement announcements={announcements} />
-      <ClassSchedule classes={classes} />
-      <QuickLinks links={links} />
-      <Recordings recordings={recordings} />
+      <div className='flex justify-between p-20 gap-6'>
+        <div>
+          <div>
+            <h1 className="text-2xl font-bold mb-4">Announcements</h1>
+            <Announcement />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold mb-4">Your Class Schedule</h1>
+            <ClassSchedule classes={classes} />
+          </div>
+        </div>
+        <div>
+          <h1 className="text-2xl font-bold mb-4">Quick Links</h1>
+          <QuickLinks links={links} />
+        </div>
+        <div className='flex flex-col'>
+          <h1 className="text-2xl font-bold mb-4"> Access Class Recordings</h1>
+          <Recordings recordings={recordings} />
+        </div>
+      </div>
     </div>
   );
 };

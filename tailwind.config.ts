@@ -11,7 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        header: '#6669fe', 
+        header: '#6669FE', 
+        announcement: '#F8F8F8',
+        announcementText: "#5354B8" 
       },
     },
   },

@@ -1,19 +1,22 @@
 // src/components/Announcement.tsx
 import React from 'react';
+import { Sun, ClipboardList } from 'lucide-react';
 
 interface AnnouncementProps {
   announcements: { id: number; text: string }[];
 }
 
-const Announcement: React.FC<AnnouncementProps> = ({ announcements }) => (
-  <section className="bg-white shadow-md rounded-lg p-6 mb-4">
-    <h2 className="text-xl font-semibold text-gray-700 mb-4">Announcements</h2>
-    <ul className="space-y-2">
-      {announcements.map((announcement) => (
-        <li key={announcement.id} className="text-gray-600">
-          {announcement.text}
+const Announcement = () => (
+  <section className="bg-white shadow-md rounded-2xl p-5 mb-4">
+    <ul className="space-y-2 text-xs">
+        <li className="flex gap-2 pl-2 py-2 pr-12 text-announcementText bg-announcement">
+          <Sun size={32} color="#5354B8" />
+          On account of independence day, August 15th will be a holiday.
         </li>
-      ))}
+        <li className="flex gap-2 pl-2 py-2 pr-12 text-announcementText bg-announcement">
+          <ClipboardList size={32} color="#5354B8" />
+          Reminder to finish assignments and submit them by Monday.
+        </li>
     </ul>
   </section>
 );
