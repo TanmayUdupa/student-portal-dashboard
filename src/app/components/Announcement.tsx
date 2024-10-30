@@ -8,7 +8,7 @@ interface AnnouncementProps {
 
 const Announcement = () => (
   <section className="bg-white shadow-md rounded-2xl p-5 mb-4">
-    <ul className="space-y-2 text-xs">
+    <ul className="space-y-2 text-sm">
         <li className="flex gap-2 pl-2 py-2 pr-12 text-announcementText bg-announcement">
           <Sun size={24} color="#5354B8" />
           On account of independence day, August 15th will be a holiday.

@@ -1,9 +1,10 @@
 // src/components/Recordings.tsx
 import React from 'react';
+import Image from 'next/image';
 
 interface Recording {
-  title: string;
   subject: string;
+  topic: string;
   date: string;
 }
 
@@ -12,40 +13,54 @@ interface RecordingProps {
 }
 
 const Recordings: React.FC<RecordingProps> = ({ recordings }) => (
-  <section className="bg-[#F8F8FF] rounded-2xl p-6 w-full max-w-lg mx-auto">
-
-    {/* Static Search and Filter Section */}
-    <div className="bg-white p-4 rounded-xl shadow-sm mb-6">
+  <section className="bg-white shadow-md rounded-2xl px-6 py-8 mb-4">
+    <div className="bg-white rounded-xl shadow-sm mb-6">
       <input
         type="text"
-        placeholder="Search for class recordings"
-        className="w-full p-3 mb-4 rounded-lg border border-gray-300"
+        placeholder="🔎︎ Search for class recordings"
+        className="w-full px-4 py-2 mb-4 rounded-lg border bg-input"
         disabled
       />
-      <div className="flex gap-4">
-        <button className="p-3 rounded-lg border border-gray-300 text-gray-700" disabled>
-          This week
-        </button>
-        <button className="p-3 rounded-lg border border-gray-300 text-gray-700" disabled>
-          All subjects
-        </button>
+      <div className="flex justify-between gap-4">
+        <span className="text-sm">
+          Filter by:
+        </span>
+        <div className="flex gap-3">
+          <button className="p-2 rounded-lg text-xs text-buttonText bg-input" disabled>
+            <div className='flex justify-between gap-5'>
+              <span> This week </span>
+              <span> ▼ </span>
+            </div>
+          </button>
+          <button className="p-2 rounded-lg border border-gray-300 text-xs text-buttonText bg-input" disabled>
+            <div className='flex justify-between gap-5'>
+              <span> All subjects </span>
+              <span> ▼ </span>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
 
     {/* Recordings List */}
-    <ul className="divide-y divide-gray-200">
+    <ul>
       {recordings.map((recording, index) => (
-        <li key={index} className="py-4 flex items-center justify-between">
-          <div>
-            <p className="text-sm font-semibold text-purple-700">{recording.subject}</p>
-            <p className="text-xl font-bold">{recording.title}</p>
-            <p className="text-sm text-gray-500">{recording.date}</p>
+        <li key={index} className="px-1 pt-3 pb-1 flex border-b border-gray-200 justify-between">
+          <div className="flex flex-col justify-between gap-5">
+            <div className="w-52">
+              <p className={`text-sm font-semibold ${(recording.subject === 'Class 7 Math' ? 'text-announcementText' : 'text-classToday')}`}>{recording.subject}</p>
+              <p className="text-lg leading-5 font-black">{recording.topic}</p>
+            </div>
+            <p className="text-xs text-gray-500">{recording.date}</p>
           </div>
-          <button className="p-4 rounded-full bg-purple-600 text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-5.304 3.022a1 1 0 01-1.448-.894V9.704a1 1 0 011.448-.894l5.304 3.022a1 1 0 010 1.788z" />
-            </svg>
-          </button>
+          <div className='flex justify-end items-center'>
+            <Image 
+              src={`${(recording.subject === 'Class 7 Math' ? '/math-image-normal.png' : '/science-image-normal.png')}`}
+              alt="image"
+              width={120}
+              height={120}
+            />
+          </div>
         </li>
       ))}
     </ul>

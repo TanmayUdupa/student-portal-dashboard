@@ -16,6 +16,8 @@ const config: Config = {
         announcementText: "#5354B8",
         classToday: "#E66DFF",
         otherStatus: "#FDF5FF",
+        input: "#F6F6FB",
+        buttonText: "#808080"
       },
     },
   },

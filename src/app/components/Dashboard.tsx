@@ -43,7 +43,12 @@ const Dashboard = () => {
     { title: 'Canvas LMS', description: 'Access LMS for notes.', url: '#' },
     { title: 'Join Live Class', description: 'Class starting in 10 mins.', url: '#' },
   ];
-  const recordings = [{ title: 'Algebra', date: '24th Oct 2024' }];
+  const recordings = [
+    { subject: 'Class 7 Math', topic: 'Algebraic Equations', date: '24th October, 2024' },
+    { subject: 'Class 7 Math', topic: 'Differential Maths', date: '24th October, 2024' },
+    { subject: 'Class 7 Science', topic: 'Fundamentals of Organic Chemistry', date: '24th October, 2024' },
+    { subject: 'Class 7 Math', topic: 'Trigonometry 101', date: '24th October, 2024' },
+  ];
 
   return (
     <div>
