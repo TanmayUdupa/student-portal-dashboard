@@ -13,7 +13,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         header: '#6669FE', 
         announcement: '#F8F8F8',
-        announcementText: "#5354B8" 
+        announcementText: "#5354B8",
+        classToday: "#E66DFF",
+        otherStatus: "#FDF5FF",
       },
     },
   },

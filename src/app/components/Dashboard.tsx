@@ -33,7 +33,12 @@ interface HeaderProps {
   };
 
 const Dashboard = () => {
-  const classes = [{ subject: 'Math', time: '10:00 AM - 11:00 AM', status: 'Today' }];
+  const classes = [
+    { title: 'Class 7, Science | Live Class', date: 'Tuesday, 5:00 - 5:50 PM', status: 'Yesterday' },
+    { title: 'Class 7, Science | Live Class', date: 'Tuesday, 6:30 - 7:15 PM', status: 'Today' },
+    { title: 'Class 7, Science | Live Class', date: 'Tuesday, 5 - 5:50 PM', status: 'Tomorrow' },
+    { title: 'Class 7, Science | Live Class', date: 'Tuesday, 5 - 5:50 PM', status: '23rd Sept, 2024' },
+  ];
   const links = [
     { title: 'Canvas LMS', description: 'Access LMS for notes.', url: '#' },
     { title: 'Join Live Class', description: 'Class starting in 10 mins.', url: '#' },
@@ -46,8 +51,8 @@ const Dashboard = () => {
         userName="Gabrisa"
         classInfo="Class 7, Math + Science"
       />
-      <div className='flex justify-between p-20 gap-6'>
-        <div>
+      <div className='flex justify-between p-16 gap-6'>
+        <div className="flex-[0.65]">
           <div>
             <h1 className="text-2xl font-bold mb-4">Announcements</h1>
             <Announcement />
@@ -57,11 +62,11 @@ const Dashboard = () => {
             <ClassSchedule classes={classes} />
           </div>
         </div>
-        <div>
+        <div className='flex-[0.75]'>
           <h1 className="text-2xl font-bold mb-4">Quick Links</h1>
           <QuickLinks links={links} />
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col flex-[0.7]'>
           <h1 className="text-2xl font-bold mb-4"> Access Class Recordings</h1>
           <Recordings recordings={recordings} />
         </div>

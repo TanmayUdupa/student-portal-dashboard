@@ -11,7 +11,7 @@ const QuickLinks: React.FC<QuickLinkProps> = ({ links }) => (
       <a
         key={index}
         href={link.url}
-        className="px-20 py-16 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors shadow-sm"
+        className="bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors shadow-sm"
       >
         <h3 className="text-lg font-medium text-gray-800 mb-2">{link.title}</h3>
         <p className="text-gray-500">Click here to access your LMS Portal for assignments, class recordings, and notes</p>

@@ -1,18 +1,24 @@
 // src/components/ClassSchedule.tsx
 import React from 'react';
+import { Video } from 'lucide-react';
 
 interface ClassScheduleProps {
-  classes: { subject: string; time: string; status: string }[];
+  classes: { title: string; date: string; status: string }[];
 }
 
 const ClassSchedule: React.FC<ClassScheduleProps> = ({ classes }) => (
-  <section className="bg-white shadow-md rounded-2xl p-6 mb-4">
+  <section className="bg-white shadow-md rounded-2xl p-5 mb-4">
     <ul className="space-y-3">
       {classes.map((classItem, index) => (
-        <li key={index} className="flex justify-between p-3 rounded-lg bg-gray-100 hover:bg-gray-200">
-          <span className="font-medium text-gray-800">{classItem.subject}</span>
-          <span className="text-gray-500">{classItem.time}</span>
-          <span className={`font-semibold ${classItem.status === 'Today' ? 'text-green-500' : 'text-gray-400'}`}>
+        <li key={index} className={`flex justify-between pl-5 pr-4 py-4 rounded-lg  ${(classItem.status === 'Yesterday' || classItem.status === 'Tomorrow')? 'text-announcementText bg-announcement' : (classItem.status === 'Today' ? 'text-white bg-classToday' : 'text-classToday bg-otherStatus')}`}>
+          <div className='flex gap-3 items-center'>
+            <Video size={24} color={`${(classItem.status === 'Yesterday' || classItem.status === 'Tomorrow')? "#5354B8" : (classItem.status === 'Today' ? 'white' : '#E66DFF')}`}/>
+            <div className="flex flex-col">
+              <span className="text-xs">{classItem.title}</span>
+              <span className="font-black">{classItem.date}</span>
+            </div>
+          </div>
+          <span className={`text-xs flex items-center`}>
             {classItem.status}
           </span>
         </li>
