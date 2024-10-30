@@ -13,7 +13,7 @@ interface RecordingProps {
 }
 
 const Recordings: React.FC<RecordingProps> = ({ recordings }) => (
-  <section className="bg-white shadow-md rounded-2xl px-6 py-8 mb-4">
+  <section className="bg-white shadow-md rounded-2xl px-6 py-10 mb-4">
     <div className="bg-white rounded-xl shadow-sm mb-6">
       <input
         type="text"

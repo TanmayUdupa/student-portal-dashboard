@@ -17,7 +17,8 @@ const config: Config = {
         classToday: "#E66DFF",
         otherStatus: "#FDF5FF",
         input: "#F6F6FB",
-        buttonText: "#808080"
+        buttonText: "#808080",
+        contactLink: "#6669FE",
       },
     },
   },
