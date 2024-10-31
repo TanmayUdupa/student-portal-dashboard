@@ -8,9 +8,9 @@ import EarlyLiveClassModal from './EarlyLiveClassModal';
 const QuickLinks = () => {
 
   const [showModal, setShowModal] = useState(false);
-  let isLiveClass = true;
+  const isLiveClass = true;
 
-  const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleModalOpen = () => {
     setShowModal(true);
   };
 

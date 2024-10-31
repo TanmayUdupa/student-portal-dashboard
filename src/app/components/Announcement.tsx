@@ -2,10 +2,6 @@
 import React from 'react';
 import { Sun, ClipboardList } from 'lucide-react';
 
-interface AnnouncementProps {
-  announcements: { id: number; text: string }[];
-}
-
 const Announcement = () => (
   <section className="bg-white shadow-md rounded-2xl p-5 mb-4">
     <ul className="space-y-2 text-sm">
