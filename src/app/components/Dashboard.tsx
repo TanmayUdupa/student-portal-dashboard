@@ -13,7 +13,7 @@ interface HeaderProps {
   
   const Header = ({ userName, classInfo }: HeaderProps) => {
     return (
-      <nav className="bg-header pr-6 pu-4 flex justify-between">
+      <nav className="bg-header pr-6 pt-4 flex justify-between">
         <Image 
           src="/logo.png"
           alt="ConnectEd Logo"
