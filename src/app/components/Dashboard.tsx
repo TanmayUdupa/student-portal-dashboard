@@ -13,7 +13,7 @@ interface HeaderProps {
   
   const Header = ({ userName, classInfo }: HeaderProps) => {
     return (
-      <nav className="bg-header pr-6 pu-4 flex items-center justify-between">
+      <nav className="bg-header pr-6 pu-4 flex justify-between">
         <Image 
           src="/logo.png"
           alt="ConnectEd Logo"
@@ -24,7 +24,7 @@ interface HeaderProps {
 
         <h1 className="text-white text-4xl font-bold">Student Portal</h1>
         
-        <div className="text-right pr-8">
+        <div className="text-right pr-8 hidden lg:block">
           <h2 className="text-white text-2xl font-bold">Hello, {userName}!</h2>
           <p className="text-white text-sm opacity-90">{classInfo}</p>
         </div>
@@ -52,8 +52,8 @@ const Dashboard = () => {
         userName="Gabrisa"
         classInfo="Class 7, Math + Science"
       />
-      <div className='flex justify-between p-20 gap-5'>
-        <div className="flex-[0.7]">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:px-20 px-4 py-8 gap-5">
+        <div className="lg:flex-[0.7]">
           <div>
             <h1 className="text-2xl font-bold mb-4">Announcements</h1>
             <Announcement />
@@ -63,12 +63,12 @@ const Dashboard = () => {
             <ClassSchedule classes={classes} />
           </div>
         </div>
-        <div className='flex-[0.6]'>
-          <h1 className="text-2xl font-bold ml-5 mb-4">Quick Links</h1>
+        <div className="lg:flex-[0.6]">
+          <h1 className="text-2xl font-bold lg:ml-5 mb-4">Quick Links</h1>
           <QuickLinks />
         </div>
-        <div className='flex flex-col flex-[0.7]'>
-          <h1 className="text-2xl font-bold mb-4"> Access Class Recordings</h1>
+        <div className="flex flex-col lg:flex-[0.7]">
+          <h1 className="text-2xl font-bold mb-4">Access Class Recordings</h1>
           <Recordings recordings={recordings} />
         </div>
       </div>
